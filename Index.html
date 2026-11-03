@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Dashboard financeiro para controle de receitas e despesas.">
+        <meta name="author" content="Lucas Lima">
+        <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#1e293b">
+
+        <title>Dashboard Financeiro</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="css/style.css">        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" >
+
+        <script src="js/script.js" defer></script>
+    </head>
+
+    <body>
+        <aside class="sidebar">
+            <h2>FinancePro</h2>
+
+            <nav class = "links">
+                <a href="#dashboard">Dashboard</a>
+                <a href="#nova-transacao">Nova Transação</a>
+                <a href="#transacoes">Transações</a>
+                <a href="#relatorios">Relatórios</a>
+            </nav>
+        </aside>
+        <main class="main">
+            <header id="dashboard">
+                <h1>Dashboard Financeiro</h1>
+                <p>Seja bem-vindo!</p>
+            </header>
+            <section class="cards">
+                <div class="card">
+                    <h3>Saldo Total</h3>
+                    <p id="saldo-total">R$0,00</p>    
+                </div>
+                <div class="card card-receitas">
+                    <h3>Receitas</h3>
+                    <p id="total-receitas">R$0,00</p>
+                </div>
+                <div class="card card-despesas">
+                    <h3>Despesas</h3>
+                    <p id="total-despesas">R$0,00</p>
+                </div>
+            </section>
+
+            <section id="nova-transacao" class="formulario-container">
+                <h2>Nova Transação</h2>
+                <form id="formulario-transacao" class="formulario-transacao"> 
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" placeholder="Ex.: Compra no supermercado" required>
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria" required>
+                        <option value="" selected disabled>Selecione a categoria:</option>
+                        <option value="alimentacao">Alimentação</option>
+                        <option value="lazer">Lazer</option>
+                        <option value="trabalho">Trabalho</option>
+                        <option value="gastosfixos">Gastos fixos</option>
+                        <option value="gastosvariaveis">Gastos Variáveis</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                    <label for="tipo">Tipo</label>
+                    <select id="tipo" required>
+                        <option value="" selected disabled>Selecione o tipo:</option>
+                        <option value="receita">Receita</option>
+                        <option value="despesa">Despesa</option>
+                    </select>
+                    <label for="data">Data</label>
+                    <input type="date" id="data" required>
+                    <label for="valor">Valor</label>
+                    <input type="number" id="valor" step="0.01" min="0.01" required>
+                    <button type = "submit">Adicionar transação</button> 
+                </form> 
+            </section>
+
+            <section id="transacoes">
+                <h2>Últimas Transações</h2>
+                <button type="button">Nova Transação</button>
+                <div class="tabela-container">
+                    <table class="tabela">
+                        <thead>
+                            <tr>                        
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Data</th>
+                                <th scope="col">Valor</th>   
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lanche</td>
+                                <td>Comida</td>
+                                <td>Despesa</td>
+                                <td>29/10/26</td>
+                                <td class="negativo">-R$25,00</td>
+                            </tr>
+                            <tr>
+                                <td>Salário</td>
+                                <td>Trabalho</td>
+                                <td>Receita</td>
+                                <td>20/10/26</td>
+                                <td class="positivo">R$3000,00</td>
+                            </tr>
+                            <tr>
+                                <td>Ônibus</td>
+                                <td>Transporte</td>
+                                <td>Despesa</td>
+                                <td>31/10/2026</td>
+                                <td class="negativo">-R$200,00</td>
+                            </tr>
+                            <tr>
+                                <td>Ecommerce</td>
+                                <td>Venda</td>
+                                <td>Receita</td>
+                                <td>09/10/2026</td>
+                                <td class="positivo">R$150,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="relatorios">
+                <h2>Relatórios</h2>
+            </section>
+        </main>
+    </body>
+</html>
